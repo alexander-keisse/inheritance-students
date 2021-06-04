@@ -1,12 +1,10 @@
 package be.intecbrussel.opdrachten;
 
-public class Rectangle {
+public class Rectangle extends Shape {
 
     private static int count;
     public static final int ANGLES = 4;
 
-    private int x;
-    private int y;
     private int width;
     private int height;
 
@@ -23,14 +21,14 @@ public class Rectangle {
     }
 
     public Rectangle(int x, int y, int width, int height) {
-        this.x = x;
-        this.y = y;
+        setX(x);
+        setY(y);
         this.width = width;
         this.height = height;
     }
 
     public Rectangle(Rectangle rectangle) {
-        this(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        this(rectangle.getX(), rectangle.getY(), rectangle.width, rectangle.height);
     }
 
     public static int getCount() {
@@ -43,22 +41,6 @@ public class Rectangle {
 
     public static int getANGLES() {
         return ANGLES;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 
     public int getWidth() {
@@ -84,16 +66,23 @@ public class Rectangle {
         if (height < 0) height = 0;
     }
 
+    @Override
     public int getArea() {
-        return width * height;
+        return 0;
     }
 
+    @Override
     public int getPerimeter() {
-        return (width + height) * 2;
+        return 0;
     }
 
-    public void setPosition(int x, int y) {
-        this.x = x;
-        this.y = y;
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "x=" + getX() +
+                ", y=" + getY() +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
     }
 }
