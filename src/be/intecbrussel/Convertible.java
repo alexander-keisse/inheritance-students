@@ -1,4 +1,4 @@
-package be.intecbrussel.test;
+package be.intecbrussel;
 
 import be.intecbrussel.Car;
 

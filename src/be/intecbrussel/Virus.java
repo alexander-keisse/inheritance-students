@@ -1,7 +1,5 @@
 package be.intecbrussel;
 
-import be.intecbrussel.Car;
-
 public class Virus {
 
     public static void main(String[] args) {

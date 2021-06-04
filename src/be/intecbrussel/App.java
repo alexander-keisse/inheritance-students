@@ -1,7 +1,5 @@
 package be.intecbrussel;
 
-import be.intecbrussel.test.Convertible;
-
 public class App {
 
     public static void main(String[] args) {
