@@ -7,7 +7,6 @@ public abstract class Shape {
     private static int count;
 
     {
-        System.out.println("Super Class shape code block triggered!");
         count++;
     }
 
@@ -32,11 +31,37 @@ public abstract class Shape {
         this.y = y;
     }
 
-    public abstract int getArea();
+    public abstract double getArea();
 
-    public abstract int getPerimeter();
+    public abstract double getPerimeter();
 
     public static int getCount() {
         return count;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Shape shape = (Shape) o;
+
+        if (x != shape.x) return false;
+        return y == shape.y;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

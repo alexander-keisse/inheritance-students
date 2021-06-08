@@ -23,7 +23,6 @@ public class Square extends Rectangle {
 
     public Square(Square side) {
         super(side.getX(), side.getY(), side.getWidth(), side.getHeight());
-
     }
 
     public int getSide() {
@@ -49,8 +48,4 @@ public class Square extends Rectangle {
         setSide(width);
     }
 
-    @Override
-    public String toString() {
-        return "Square{" + super.toString() + "}";
-    }
 }

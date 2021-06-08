@@ -8,6 +8,8 @@ public class Rectangle extends Shape {
     private int width;
     private int height;
 
+    private String description = "Rectangle";
+
     {
         count++;
     }
@@ -67,13 +69,34 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public int getArea() {
-        return 0;
+    public double getArea() {
+        return (double) width * height;
     }
 
     @Override
-    public int getPerimeter() {
-        return 0;
+    public double getPerimeter() {
+        return (double) (width + height) * 2;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Rectangle rectangle = (Rectangle) o;
+
+        if (getWidth() != rectangle.getWidth()) return false;
+        return getHeight() == rectangle.getHeight();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + getWidth();
+        result = 31 * result + getHeight();
+        result = 31 * result + description.hashCode();
+        return result;
     }
 
     @Override
